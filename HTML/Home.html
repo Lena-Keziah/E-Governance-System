@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Governance Services Portal</title>
+    <link rel="stylesheet" href="../CSS/Home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+    <nav>
+      <ul>
+        <li><a href="Home.html">HOME</a></li>
+        <li><a href="Services.html">SERVICES</a></li>
+        <li><a href="Login.html">LOGIN</a></li>
+        <li><a href="about us.html">ABOUT US</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to the National e-Governance Portal</h1>
+                <p>Your gateway to fast, secure, and accessible government services online.</p>
+                <p class="hero-description">Empowering citizens through digital solutions for efficient public service delivery and transparent governance.</p>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <h2>Seamless Access to Public Services</h2>
+            <p>Apply, track, and manage government services anytime via your e-Governance account.</p>
+        </section>
+
+     <section class="services-grid">
+    <div class="service-card">
+        <h3>NATIONAL ID SERVICES</h3>
+        <p>Apply for, renew, or replace your national identity card</p>
+        <a href="#" class="btn-apply">Apply Now</a>
+    </div>
+    <div class="service-card">
+        <h3>DRIVER’S LICENSE</h3>
+        <p>Get a new license, renew, or check license status</p>
+        <a href="#" class="btn-apply">Apply Now</a>
+    </div>
+    <div class="service-card">
+        <h3>LAND & PROPERTY SERVICES</h3>
+        <p>Access land records, title deeds, and property registration</p>
+        <a href="#" class="btn-apply">Apply Now</a>
+    </div>
+    <div class="service-card">
+        <h3>TAX & REVENUE</h3>
+        <p>Pay taxes, view assessments, and manage tax records</p>
+        <a href="#" class="btn-apply">Apply Now</a>
+    </div>
+    <div class="service-card other-services">
+        <h3>OTHER SERVICES</h3>
+        <p>Access passport, social services, business permits, and more</p>
+        <a href="#" class="btn-apply">Apply Now</a>
+    </div>
+</section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h4>Contact Us:</h4>
+                <p>+237678904588</p>
+                <p>Visit Us: Bongo Square Buea</p>
+            </div>
+            <div class="contact-info french">
+                <h4>Contactez-nous:</h4>
+                <p>+237678904588</p>
+                <p>Visitez-nous: Place Bongo, Bues</p>
+            </div>
+            <div class="government-branding">
+                <p>REPUBLIC OF CAMEROON</p>
+                <p>NATIONAL e-GOVERNANCE SYSTEM (NeGS)</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © e-Governance 2025. All rights reserved</p>
+        </div>
+    </footer>
+    <script>
+  const heroSection = document.querySelector('.hero');
+const heroImages = [
+  '..Images/high-angle-muslim-woman-posing-outside.jpg',
+  '..Images/slide2.jpg',
+  'images/slide3.jpg'
+];
+let currentImage = 0;
+
+function changeHeroBackground() {
+  currentImage = (currentImage + 1) % heroImages.length;
+  heroSection.style.backgroundImage = `url('${heroImages[currentImage]}')`;
+}
+
+setInterval(changeHeroBackground, 5000); // change every 5 seconds
+    </script>
+
+</body>
+</html>
