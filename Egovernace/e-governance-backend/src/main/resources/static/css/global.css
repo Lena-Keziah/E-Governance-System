@@ -1,0 +1,313 @@
+/* General Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* Background will be handled by page-specific CSS or default very light */
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer stays at the bottom */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; /* Uniform padding for main sections */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1a4d35; /* Darker green for headings */
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #2f6e48; /* Medium green for links */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1a4d35; /* Darker green on hover */
+    text-decoration: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
+    font-size: 1.05em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for buttons */
+}
+
+.btn-primary {
+    background-color: #2f6e48; /* Medium green */
+    color: #fff;
+    border: 1px solid #2f6e48;
+}
+
+.btn-primary:hover {
+    background-color: #1a4d35; /* Darker green on hover */
+    border-color: #1a4d35;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+    background-color: #F9FF4B; /* Yellow accent */
+    color: #1a4d35; /* Dark green text */
+    border: 1px solid #F9FF4B;
+}
+
+.btn-secondary:hover {
+    background-color: #e6eb44; /* Slightly darker yellow */
+    border-color: #e6eb44;
+    color: #1a4d35;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Header Styling --- */
+.main-header {
+    background: linear-gradient(135deg, #1a4d35 0%, #2f6e48 100%); /* Green gradient background */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: sticky; /* Keeps header visible on scroll */
+    top: 0;
+    z-index: 1000; /* Ensures header is above other content */
+}
+
+/* Top Navigation Bar */
+.nav-top {
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly transparent dark overlay */
+    color: #e0e0e0;
+    font-size: 0.9em;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Adjust padding for top bar */
+}
+
+.nav-top .contact-info span {
+    margin-right: 20px;
+}
+
+.nav-top .contact-info i, .nav-top .social-icons i {
+    margin-right: 5px;
+    color: #F9FF4B; /* Yellow accent for icons */
+}
+
+.nav-top .social-icons a {
+    color: #e0e0e0;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-top .social-icons a:hover {
+    color: #F9FF4B; /* Yellow on hover */
+}
+
+/* Main Navigation Bar */
+.nav-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.main-header .logo h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 1.1em;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #F9FF4B; /* Yellow accent for active/hover */
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #F9FF4B; /* Yellow on hover/active */
+    text-decoration: none;
+}
+
+/* --- Main Content Layout --- */
+/* --- Main Content Layout --- */
+main {
+    flex: 1; /* Allows main content to expand and push footer down */
+    padding: 0; /* REMOVED DEFAULT PADDING: Sections inside main will manage their own padding */
+}
+
+/* --- Section Titles and Descriptions (Reusable) --- */
+.section-title {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #F9FF4B;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 2px;
+}
+
+.section-description {
+    font-size: 1.15em;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    color: #555;
+}
+
+
+/* --- Footer Styling --- */
+.main-footer {
+    background-color: #0d2a1b; /* Even darker green */
+    color: #bbb;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.main-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-footer p {
+    margin-bottom: 15px;
+    color: #a0a0a0;
+}
+
+.main-footer .footer-links a {
+    color: #bbb;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+.main-footer .footer-links a:hover {
+    color: #F9FF4B; /* Yellow accent on hover */
+    text-decoration: none;
+}
+
+/* --- Responsive Design (Global Header/Footer) --- */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.2em;
+    }
+    .section-description {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-top .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-top .contact-info {
+        margin-bottom: 10px;
+    }
+    .nav-top .social-icons {
+        margin-top: 5px;
+    }
+    .nav-bottom .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-header .logo {
+        margin-bottom: 15px;
+    }
+    .main-nav ul li {
+        margin: 0 15px;
+    }
+    .main-nav ul li a {
+        font-size: 1em; /* Slightly smaller for mobile nav */
+    }
+    main {
+        padding: 20px 0; /* Reduce default padding for mobile */
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .section-description {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header .logo h1 {
+        font-size: 1.8em;
+    }
+    .main-nav ul li {
+        margin: 0 8px;
+    }
+    .main-nav ul li a {
+        font-size: 0.9em;
+    }
+}

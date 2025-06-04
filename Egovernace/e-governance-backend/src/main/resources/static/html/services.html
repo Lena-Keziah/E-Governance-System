@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-GovCameroon - Services | Republic of Cameroon</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/services.css"> <!-- Services-specific styles -->
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone-alt"></i> +237 670 000 000</span>
+                    <span><i class="fas fa-envelope"></i> info@egovcameroon.cm</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <div class="container">
+                <div class="logo">
+                    <h1>E-GovCameroon</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="services-hero-banner" data-animation="fade-in">
+            <div class="container">
+                <h2 data-animation="slide-in-right">Your Central Hub for Public Services</h2>
+                <p data-animation="fade-in-up">Access a wide range of government services, simplified and secured for your convenience.</p>
+            </div>
+        </section>
+
+        <section class="services-overview-section">
+            <div class="container">
+                <h3 class="section-title">Explore Our Service Categories</h3>
+                <p class="section-description">Click on any service category below to learn more and begin your application or interaction.</p>
+
+                <div class="services-grid">
+    <!-- Tax Payment -->
+    <a href="tax-payment.html" class="service-card" data-animation="fade-in-up" data-delay="0.1"> <!-- UPDATED HREF -->
+        <div class="service-icon"><i class="fas fa-money-bill-wave"></i></div>
+        <h4>Tax Payment</h4>
+        <p>Simplify your tax obligations. Pay personal or business taxes online.</p>
+        <span>Access Service <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+                    <!-- E-Voting -->
+                   <a href="e-voting.html" class="service-card" data-animation="fade-in-up" data-delay="0.2"> <!-- UPDATED HREF -->
+        <div class="service-icon"><i class="fas fa-vote-yea"></i></div>
+        <h4>E-Voting</h4>
+        <p>Participate in democratic processes securely and transparently.</p>
+        <span>Access Service <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+                    <!-- Service Request (Leads to a sub-page) -->
+                    <a href="service-request.html" class="service-card" data-animation="fade-in-up" data-delay="0.3">
+                        <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                        <h4>Service Request</h4>
+                        <p>Apply for various documents and official services (Passport, ID, etc.).</p>
+                        <span>Explore Sub-Services <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <!-- Feedback -->
+                    <a href="feedback.html" class="service-card" data-animation="fade-in-up" data-delay="0.4"> <!-- UPDATED HREF -->
+        <div class="service-icon"><i class="fas fa-comments"></i></div>
+        <h4>Feedback & Complaints</h4>
+        <p>Share your opinions, suggestions, or submit complaints directly.</p>
+        <span>Access Service <i class="fas fa-arrow-right"></i></span>
+    </a>
+                    <!-- Public Records -->
+                    <a href="public-records.html" class="service-card" data-animation="fade-in-up" data-delay="0.5"> <!-- UPDATED HREF -->
+        <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+        <h4>Public Records</h4>
+        <p>Access government documents, statistics, and official records.</p>
+        <span>Access Service <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+                    <!-- Daily Updates -->
+                    <a href="daily-updates.html" class="service-card" data-animation="fade-in-up" data-delay="0.6"> <!-- UPDATED HREF -->
+        <div class="service-icon"><i class="fas fa-newspaper"></i></div>
+        <h4>Daily Updates</h4>
+        <p>Stay informed with the latest government news, announcements, and initiatives.</p>
+        <span>Access Service <i class="fas fa-arrow-right"></i></span>
+    </a>
+                     <a href="#" class="btn btn-secondary" data-animation="fade-in-up" onclick="logout()">Logout Securely <i class="fas fa-sign-out-alt"></i></a>
+            
+                </div>
+                <div class="text-center" style="margin-top: 60px;" data-animation="fade-in-up" data-delay="0.7">
+                    <p class="additional-info-text">Can't find what you're looking for?</p>
+                    <a href="#" class="btn btn-primary">Contact Support <i class="fas fa-headset"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 E-GovCameroon. All rights reserved. Made for the Republic of Cameroon.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/services.js"></script> <!-- Services-specific scripts -->
+</body>
+</html>

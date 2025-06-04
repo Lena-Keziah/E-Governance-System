@@ -1,0 +1,176 @@
+/* service-request.css - Styling specific to the Service Request sub-page */
+
+/* --- Hero Banner for Sub-Services Page --- */
+.sub-service-hero-banner {
+    background: linear-gradient(rgba(26, 77, 53, 0.85), rgba(47, 110, 72, 0.85)), url('https://via.placeholder.com/1500x400/2f6e48/F9FF4B?text=Citizen+Services') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-service-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(249, 255, 75, 0.1), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(249, 255, 75, 0.1), transparent 50%);
+    z-index: 0;
+}
+
+.sub-service-hero-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.sub-service-hero-banner h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    line-height: 1.2;
+}
+
+.sub-service-hero-banner p {
+    font-size: 1.3em;
+    margin-bottom: 35px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* --- Sub-Services List Section --- */
+.sub-services-list-section {
+    padding: 80px 0;
+    background-color: #f8fbf9;
+}
+
+.sub-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.sub-service-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
+    border-top: 5px solid transparent; /* For hover effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-decoration: none;
+}
+
+.sub-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    border-top-color: #F9FF4B; /* Yellow accent on hover */
+}
+
+.sub-service-icon {
+    font-size: 3.5em;
+    color: #2f6e48;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.sub-service-card:hover .sub-service-icon {
+    color: #1a4d35; /* Darker green on hover */
+}
+
+.sub-service-card h4 {
+    font-size: 1.6em;
+    color: #1a4d35;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.sub-service-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.sub-service-card span {
+    display: block;
+    color: #2f6e48;
+    font-weight: 600;
+    margin-top: auto;
+    transition: color 0.3s ease;
+}
+
+.sub-service-card span i {
+    margin-left: 8px;
+    transition: margin-left 0.3s ease;
+}
+
+.sub-service-card:hover span {
+    color: #1a4d35;
+}
+
+.sub-service-card:hover span i {
+    margin-left: 12px;
+}
+
+
+/* Animations for elements loaded by Intersection Observer (same as global/services.css) */
+[data-animation] {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+[data-animation="fade-in"].is-visible { opacity: 1; }
+[data-animation="fade-in-up"] { transform: translateY(30px); }
+[data-animation="fade-in-up"].is-visible { opacity: 1; transform: translateY(0); }
+[data-animation="slide-in-right"] { transform: translateX(50px); }
+[data-animation="slide-in-right"].is-visible { opacity: 1; transform: translateX(0); }
+
+/* Dynamically set transition delay for staggered animations */
+[data-delay="0.1"] { transition-delay: 0.1s; }
+[data-delay="0.2"] { transition-delay: 0.2s; }
+[data-delay="0.3"] { transition-delay: 0.3s; }
+[data-delay="0.4"] { transition-delay: 0.4s; }
+[data-delay="0.5"] { transition-delay: 0.5s; }
+[data-delay="0.6"] { transition-delay: 0.6s; }
+
+
+/* --- Responsive Design for Sub-Services Page --- */
+@media (max-width: 992px) {
+    .sub-service-hero-banner h2 { font-size: 2.8em; }
+    .sub-service-hero-banner p { font-size: 1.1em; }
+}
+
+@media (max-width: 768px) {
+    .sub-service-hero-banner { padding: 60px 0; min-height: 30vh; }
+    .sub-service-hero-banner h2 { font-size: 2.2em; }
+    .sub-service-hero-banner p { font-size: 1em; }
+    .sub-services-list-section { padding: 50px 0; }
+    .sub-services-grid { grid-template-columns: 1fr; }
+    .sub-service-card { margin-bottom: 20px; }
+    .sub-service-icon { font-size: 3em; }
+    .sub-service-card h4 { font-size: 1.5em; }
+}
+
+@media (max-width: 480px) {
+    .sub-service-hero-banner h2 { font-size: 1.8em; }
+    .sub-service-hero-banner p { font-size: 0.9em; }
+    .sub-service-card { padding: 25px; }
+    .sub-service-icon { font-size: 2.5em; }
+    .sub-service-card h4 { font-size: 1.3em; }
+    .sub-service-card p { font-size: 0.9em; }
+}

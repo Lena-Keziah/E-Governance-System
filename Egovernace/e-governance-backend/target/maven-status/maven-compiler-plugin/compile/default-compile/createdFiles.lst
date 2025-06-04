@@ -1,0 +1,4 @@
+com\example\egov\EGovernanceBackendApplication.class
+com\example\egov\controller\ServiceRequestController.class
+com\example\egov\model\BusinessRegistrationData.class
+com\example\egov\model\NationalIdApplicationData.class

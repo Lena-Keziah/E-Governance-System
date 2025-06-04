@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-GovCameroon - Feedback & Complaints | Republic of Cameroon</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/feedback.css"> <!-- Feedback-specific styles -->
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone-alt"></i> +237 670 000 000</span>
+                    <span><i class="fas fa-envelope"></i> info@egovcameroon.cm</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <div class="container">
+                <div class="logo">
+                    <h1>E-GovCameroon</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content-wrapper">
+        <section class="feedback-hero-banner" data-animation="fade-in">
+            <div class="container">
+                <h2 data-animation="slide-in-right">Your Voice Matters</h2>
+                <p data-animation="fade-in-up">Help us improve by sharing your feedback, suggestions, or complaints.</p>
+                <a href="services.html" class="btn btn-secondary" data-animation="fade-in-up">Back to Services <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </section>
+
+        <section class="feedback-form-section">
+            <div class="container">
+                <h3 class="section-title">Submit Your Feedback</h3>
+                <p class="section-description">We value your input. Please fill out the form below to help us serve you better.</p>
+
+                <div class="form-container-card">
+                    <form id="feedbackForm" class="feedback-form">
+                        <div class="form-group">
+                            <label for="feedbackType">Type of Feedback</label>
+                            <div class="radio-group-horizontal">
+                                <label class="radio-option">
+                                    <input type="radio" name="feedbackType" value="suggestion" checked> Suggestion
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="feedbackType" value="complaint"> Complaint
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="feedbackType" value="inquiry"> Inquiry
+                                </label>
+                            </div>
+                            <div class="error-message" id="feedbackTypeError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="e.g., Issue with Passport Application" required>
+                            <div class="error-message" id="subjectError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="7" placeholder="Please describe your feedback or complaint in detail..." required></textarea>
+                            <div class="error-message" id="messageError"></div>
+                        </div>
+
+                        <div class="form-group-optional">
+                            <label>Your Contact Information (Optional)</label>
+                            <p class="info-text">Providing contact details allows us to follow up with you regarding your submission.</p>
+                            <div class="form-group-inline">
+                                <div class="form-group-sub">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" name="fullName" placeholder="John Doe">
+                                </div>
+                                <div class="form-group-sub">
+                                    <label for="emailOrPhone">Email or Phone</label>
+                                    <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="example@email.com or +237 6XX XXX XXX">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group terms-checkbox">
+                            <label>
+                                <input type="checkbox" id="agreeToPrivacy" required>
+                                I agree to the <a href="#">privacy policy</a> regarding my feedback.
+                            </label>
+                            <div class="error-message" id="privacyError"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-feedback-btn">Submit Feedback <i class="fas fa-paper-plane"></i></button>
+
+                        <div id="submissionStatus" class="submission-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-we-handle-feedback-section">
+            <div class="container">
+                <h3 class="section-title">How Your Feedback Is Handled</h3>
+                <p class="section-description">We take every submission seriously. Here's a brief overview of our process:</p>
+                <div class="process-steps">
+                    <div class="step-item" data-animation="fade-in-up" data-delay="0.1">
+                        <div class="step-icon"><i class="fas fa-upload"></i></div>
+                        <h4>1. Submission</h4>
+                        <p>Your feedback is securely submitted and recorded in our system.</p>
+                    </div>
+                    <div class="step-item" data-animation="fade-in-up" data-delay="0.2">
+                        <div class="step-icon"><i class="fas fa-inbox"></i></div>
+                        <h4>2. Review & Categorization</h4>
+                        <p>Our dedicated team reviews your submission and assigns it to the relevant department.</p>
+                    </div>
+                    <div class="step-item" data-animation="fade-in-up" data-delay="0.3">
+                        <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                        <h4>3. Action & Resolution</h4>
+                        <p>Appropriate actions are taken, whether it's an improvement, investigation, or direct response.</p>
+                    </div>
+                    <div class="step-item" data-animation="fade-in-up" data-delay="0.4">
+                        <div class="step-icon"><i class="fas fa-check-double"></i></div>
+                        <h4>4. Follow-up (Optional)</h4>
+                        <p>If contact details were provided, we may follow up with updates on your specific case.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 E-GovCameroon. All rights reserved. Made for the Republic of Cameroon.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/feedback.js"></script> <!-- Feedback-specific scripts -->
+</body>
+</html>

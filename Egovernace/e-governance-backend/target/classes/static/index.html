@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>e-Governance Service Request</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    /* Navigation bar */
+    nav {
+      background-color: #0041a8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+      gap: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #80aaff;
+    }
+    /* Main container */
+    main {
+      flex-grow: 1;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    main h1 {
+      margin-bottom: 40px;
+      font-weight: 700;
+      color: #0052cc;
+      letter-spacing: 1.2px;
+    }
+    /* Grid container: fixed 3 rows x 2 columns */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 180px);
+      gap: 30px 40px;
+      justify-items: center;
+      align-items: center;
+    }
+    a.card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  background: white;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.08);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+a.card:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+  transform: translateY(-6px);
+  border-color: #0052cc;
+}
+
+    /* Each card */
+    .card {
+      background: white;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      width: 280px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      padding: 20px;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+      transform: translateY(-6px);
+      border-color: #0052cc;
+    }
+    .card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 18px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+    }
+    .card span {
+      font-weight: 600;
+      font-size: 18px;
+      color: #0041a8;
+      user-select: none;
+    }
+    /* Footer */
+    footer {
+      background-color: #0041a8;
+      color: white;
+      padding: 18px 25px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.15);
+    }
+    footer .contact, footer .social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    footer .social a {
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 5px;
+      background: #1877f2; /* Facebook blue */
+      transition: background 0.3s;
+    }
+    footer .social a:hover {
+      background: #0f5bb5;
+    }
+    footer .copyright {
+      width: 100%;
+      text-align: center;
+      margin-top: 12px;
+      font-size: 13px;
+      opacity: 0.85;
+      user-select: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 620px) {
+      .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 160px);
+        gap: 20px 0;
+      }
+      .card {
+        width: 100%;
+        max-width: 350px;
+      }
+      nav {
+        gap: 25px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#">SERVICES</a>
+    <a href="#">LOGIN</a>
+    <a href="#">ABOUT US</a>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <h1>SERVICE REQUEST</h1>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://img.icons8.com/?size=100&id=77158&format=png&color=000000" alt="Passport Icon" />
+        <span>PASSPORT</span>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/?size=100&id=44027&format=png&color=000000" alt="Social Benefits Icon" />
+        <span>SOCIAL BENEFITS</span>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/?size=100&id=iJ8xtRGufGwY&format=png&color=000000" alt="Certificates Icon" />
+        <span>CERTIFICATES</span>
+      </div>
+      <div class="card">
+        <a href="business_registration.html" class="card">
+          <img src="https://img.icons8.com/?size=100&id=L09zAuwGVoGB&format=png&color=000000" alt="Business Registration Icon" />
+          <span>BUSINESS REGISTRATION</span>
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/?size=100&id=44794&format=png&color=000000" alt="Licenses and Permits Icon" />
+        <span>LICENSES AND PERMITS</span>
+      </div>
+      <div class="card">
+        <a href="national_id.html" class="card">
+          <img src="https://img.icons8.com/?size=100&id=49440&format=png&color=000000" alt="National ID Icon" />
+          <span>NATIONAL ID</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="contact">
+      Contact us: +237 658 902 653
+    </div>
+    <div class="social">
+      <a href="#" aria-label="Facebook" title="Facebook" target="_blank">
+        <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22,12C22,6.48 17.52,2 12,2C6.48,2 2,6.48 2,12C2,17.02 5.66,21.13 10.44,21.88V14.89H7.9V12H10.44V9.8C10.44,7.3 11.93,5.94 14.21,5.94C15.31,5.94 16.46,6.15 16.46,6.15V8.64H15.12C13.8,8.64 13.56,9.46 13.56,10.3V12H16.34L15.88,14.89H13.56V21.88C18.34,21.13 22,17.02 22,12Z" />
+        </svg>
+      </a>
+    </div>
+    <div class="copyright">
+      &copy; e-Government. All Rights Reserved
+    </div>
+  </footer>
+
+</body>
+</html>

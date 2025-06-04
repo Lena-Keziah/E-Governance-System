@@ -1,0 +1,269 @@
+/* services.css - Styling specific to the Services page */
+
+/* --- Hero Banner for Services Page --- */
+.services-hero-banner {
+    background: linear-gradient(rgba(47, 110, 72, 0.85), rgba(26, 77, 53, 0.85)), url('https://via.placeholder.com/1500x400/1a4d35/F9FF4B?text=E-Gov+Services') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh; /* Shorter than home hero, but still prominent */
+    position: relative;
+    overflow: hidden;
+}
+
+.services-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(249, 255, 75, 0.1), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(249, 255, 75, 0.1), transparent 50%);
+    z-index: 0;
+}
+
+.services-hero-banner .container {
+    position: relative;
+    z-index: 1; /* Ensure content is above pseudo-elements */
+}
+
+.services-hero-banner h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    line-height: 1.2;
+}
+
+.services-hero-banner p {
+    font-size: 1.3em;
+    margin-bottom: 35px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* --- Services Overview Section --- */
+.services-overview-section {
+    padding: 80px 0;
+    background-color: #f8fbf9; /* Very light green background */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 35px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-bottom: 4px solid transparent; /* For hover effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content and footer */
+    height: 100%; /* Ensures cards in a row are same height */
+    text-decoration: none; /* Remove underline for entire card link */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border-color: #F9FF4B; /* Yellow accent on hover */
+}
+
+.service-icon {
+    font-size: 4em;
+    color: #2f6e48; /* Medium green */
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1); /* Icon slightly grows on hover */
+}
+
+.service-card h4 {
+    font-size: 1.8em;
+    color: #1a4d35;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.service-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows paragraph to take available space */
+}
+
+.service-card span {
+    display: block;
+    color: #2f6e48;
+    font-weight: 600;
+    margin-top: auto; /* Pushes the "Access Service" to the bottom */
+    transition: color 0.3s ease;
+}
+
+.service-card span i {
+    margin-left: 8px;
+    transition: margin-left 0.3s ease;
+}
+
+.service-card:hover span {
+    color: #1a4d35;
+}
+
+.service-card:hover span i {
+    margin-left: 12px;
+}
+
+.additional-info-text {
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Animations for elements loaded by Intersection Observer (re-used from home.css logic) */
+[data-animation] {
+    opacity: 0;
+    transition: all 0.8s ease-out; /* Base transition for all animations */
+}
+
+/* Fade-in animation */
+[data-animation="fade-in"].is-visible {
+    opacity: 1;
+}
+
+/* Fade-in-up animation (common for sections) */
+[data-animation="fade-in-up"] {
+    transform: translateY(30px);
+}
+[data-animation="fade-in-up"].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide-in-right animation (for hero H2) */
+[data-animation="slide-in-right"] {
+    transform: translateX(50px);
+}
+[data-animation="slide-in-right"].is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Dynamically set transition delay for staggered animations */
+[data-delay="0.1"] { transition-delay: 0.1s; }
+[data-delay="0.2"] { transition-delay: 0.2s; }
+[data-delay="0.3"] { transition-delay: 0.3s; }
+[data-delay="0.4"] { transition-delay: 0.4s; }
+[data-delay="0.5"] { transition-delay: 0.5s; }
+[data-delay="0.6"] { transition-delay: 0.6s; }
+[data-delay="0.7"] { transition-delay: 0.7s; }
+[data-delay="0.8"] { transition-delay: 0.8s; }
+
+
+/* --- Scroll to Top Button (shared global styling, but included for completeness if not in global) --- */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 30px; /* Place at bottom */
+    right: 30px; /* Place at right */
+    z-index: 99; /* High z-index to be on top */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #2f6e48; /* Green background */
+    color: white; /* White text */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded shape */
+    font-size: 1.2em;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #1a4d35; /* Darker green on hover */
+    transform: translateY(-3px);
+}
+
+
+/* --- Responsive Design for Services Page --- */
+@media (max-width: 992px) {
+    .services-hero-banner h2 {
+        font-size: 2.8em;
+    }
+    .services-hero-banner p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero-banner {
+        padding: 60px 0;
+        min-height: 30vh;
+    }
+    .services-hero-banner h2 {
+        font-size: 2.2em;
+    }
+    .services-hero-banner p {
+        font-size: 1em;
+    }
+    .services-overview-section {
+        padding: 50px 0;
+    }
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack service cards vertically */
+    }
+    .service-card {
+        margin-bottom: 20px;
+    }
+    .service-icon {
+        font-size: 3em;
+    }
+    .service-card h4 {
+        font-size: 1.5em;
+    }
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1em;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-hero-banner h2 {
+        font-size: 1.8em;
+    }
+    .services-hero-banner p {
+        font-size: 0.9em;
+    }
+    .service-card {
+        padding: 25px;
+    }
+    .service-icon {
+        font-size: 2.5em;
+    }
+    .service-card h4 {
+        font-size: 1.3em;
+    }
+    .service-card p {
+        font-size: 0.9em;
+    }
+}

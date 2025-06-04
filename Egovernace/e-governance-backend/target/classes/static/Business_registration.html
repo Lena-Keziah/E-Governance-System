@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 600px; margin: auto; }
+        h1 { color: #333; text-align: center; margin-bottom: 25px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Business Registration</h1>
+        <form action="/submitBusinessRegistration" method="POST">
+            <label for="businessName">Business Name:</label>
+            <input type="text" id="businessName" name="businessName" required><br>
+
+            <label for="ownerName">Owner Name:</label>
+            <input type="text" id="ownerName" name="ownerName" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <!-- NEW FIELDS -->
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10,15}" title="Phone number (10-15 digits)" required><br>
+
+            <label for="businessType">Business Type:</label>
+            <select id="businessType" name="businessType" required>
+                <option value="">--Select Type--</option>
+                <option value="Sole Proprietorship">Sole Proprietorship</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Corporation">Corporation</option>
+                <option value="LLC">LLC</option>
+                <option value="Other">Other</option>
+            </select><br>
+
+            <label for="registrationDate">Registration Date:</label>
+            <input type="date" id="registrationDate" name="registrationDate" required><br>
+            <!-- END NEW FIELDS -->
+
+            <input type="submit" value="Register Business">
+        </form>
+    </div>
+</body>
+</html>
