@@ -1,0 +1,334 @@
+/* tax-payment.css - Styling specific to the Tax Payment page */
+
+/* --- Hero Banner for Tax Payment Page --- */
+.tax-hero-banner {
+    /* Keep existing background with gradient and placeholder image */
+    background: linear-gradient(rgba(47, 110, 72, 0.85), rgba(26, 77, 53, 0.85)), url('https://via.placeholder.com/1500x400/1a4d35/F9FF4B?text=Pay+Taxes') no-repeat center center/cover;
+    color: #fff; /* Keep this as white text is desired for dark backgrounds */
+    text-align: center;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 35vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.tax-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(249, 255, 75, 0.1), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(249, 255, 75, 0.1), transparent 50%);
+    z-index: 0;
+}
+
+.tax-hero-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.tax-hero-banner h2 {
+    font-size: 3.2em;
+    margin-bottom: 15px;
+    color: #fff; /* Ensure it's white */
+    /* OPTION 2: Strengthen the text shadow for better contrast */
+    text-shadow: 2px 2px 7px rgba(0,0,0,0.6); /* Increased shadow blur and opacity */
+    line-height: 1.2;
+}
+
+.tax-hero-banner p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff; /* Ensure it's white */
+    /* OPTION 3: Strengthen the text shadow for better contrast */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* Increased shadow blur and opacity */
+}
+/* --- Tax Payment Form Section --- */
+.tax-payment-form-section {
+    padding: 60px 0;
+    background-color: #f8fbf9; /* Light background */
+}
+
+.payment-card-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px; /* Wider form for better layout */
+    margin: 40px auto 0 auto;
+    border-top: 5px solid #2f6e48; /* Green accent bar */
+}
+
+.tax-form .form-group {
+    margin-bottom: 25px;
+    position: relative; /* For error messages */
+}
+
+.tax-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.tax-form input[type="text"],
+.tax-form input[type="number"],
+.tax-form select {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #fcfcfc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tax-form input:focus,
+.tax-form select:focus {
+    border-color: #2f6e48;
+    box-shadow: 0 0 0 4px rgba(47, 110, 72, 0.15);
+    outline: none;
+}
+
+.tax-form .error-message {
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 8px;
+    display: none;
+}
+
+/* Payment Method Selection */
+.payment-method-group {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.radio-card {
+    display: block;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.radio-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none; /* Make radio button itself not clickable */
+}
+
+.radio-card .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.radio-card .card-content i {
+    font-size: 2.5em;
+    color: #2f6e48;
+    margin-bottom: 10px;
+}
+
+.radio-card .card-content img.payment-logo {
+    max-height: 25px;
+    width: auto;
+    margin-top: 10px;
+    filter: grayscale(100%); /* Desaturate logos by default */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.radio-card input[type="radio"]:checked + .card-content .payment-logo {
+    filter: grayscale(0%); /* Full color when selected */
+    opacity: 1;
+}
+
+.radio-card:hover {
+    border-color: #a6d9b4; /* Lighter green border on hover */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.radio-card input[type="radio"]:checked + .card-content {
+    background-color: #e6f7ed; /* Light green background when selected */
+    border-color: #2f6e48; /* Stronger border when selected */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.radio-card input[type="radio"]:checked + .card-content i {
+    color: #1a4d35; /* Darker green for icon when selected */
+}
+
+
+.tax-form .terms-checkbox {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tax-form .terms-checkbox label {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.9em;
+    color: #555;
+    cursor: pointer;
+}
+
+.tax-form .terms-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #2f6e48;
+    transform: scale(1.1);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.tax-form .terms-checkbox label a {
+    color: #2f6e48;
+    font-weight: 500;
+}
+
+.tax-form .terms-checkbox label a:hover {
+    text-decoration: underline;
+}
+
+.submit-payment-btn {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+.submit-payment-btn i {
+    margin-left: 10px;
+}
+
+.payment-status {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    display: none; /* Hidden by default */
+}
+
+.payment-status.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.payment-status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Animations for elements loaded by Intersection Observer (same as global/services.css) */
+[data-animation] {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+[data-animation="fade-in"].is-visible { opacity: 1; }
+[data-animation="fade-in-up"] { transform: translateY(30px); }
+[data-animation="fade-in-up"].is-visible { opacity: 1; transform: translateY(0); }
+[data-animation="slide-in-right"] { transform: translateX(50px); }
+[data-animation="slide-in-right"].is-visible { opacity: 1; transform: translateX(0); }
+
+
+/* --- Scroll to Top Button (re-used global styling, as it's common) --- */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 30px; /* Place at bottom */
+    right: 30px; /* Place at right */
+    z-index: 99; /* High z-index to be on top */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #2f6e48; /* Green background */
+    color: white; /* White text */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded shape */
+    font-size: 1.2em;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #1a4d35; /* Darker green on hover */
+    transform: translateY(-3px);
+}
+
+/* --- Responsive Design for Tax Payment Page --- */
+@media (max-width: 768px) {
+    .tax-hero-banner h2 {
+        font-size: 2.5em;
+    }
+    .tax-hero-banner p {
+        font-size: 1.1em;
+    }
+    .payment-card-container {
+        padding: 30px 25px;
+        margin: 30px 15px 0 15px;
+    }
+    .tax-form label {
+        font-size: 0.9em;
+    }
+    .tax-form input, .tax-form select {
+        padding: 12px 10px;
+        font-size: 0.95em;
+    }
+    .payment-options {
+        grid-template-columns: 1fr; /* Stack payment options vertically */
+    }
+    .radio-card {
+        padding: 15px;
+    }
+    .radio-card .card-content i {
+        font-size: 2em;
+    }
+    .submit-payment-btn {
+        padding: 12px 0;
+        font-size: 1em;
+    }
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1em;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tax-hero-banner h2 {
+        font-size: 2em;
+    }
+    .tax-hero-banner p {
+        font-size: 0.9em;
+    }
+}

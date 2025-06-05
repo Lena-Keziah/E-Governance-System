@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-GovCameroon - Tax Payment | Republic of Cameroon</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/tax-payment.css"> <!-- Tax Payment-specific styles -->
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone-alt"></i> +237 670 000 000</span>
+                    <span><i class="fas fa-envelope"></i> info@egovcameroon.cm</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <div class="container">
+                <div class="logo">
+                    <h1>E-GovCameroon</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Homes</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content-wrapper">
+        <section class="tax-hero-banner" data-animation="fade-in">
+            <div class="container">
+                <h2 data-animation="slide-in-right">Seamless Tax Payments Online</h2>
+                <p data-animation="fade-in-up">Easily pay your taxes securely and efficiently from anywhere in Cameroon.</p>
+                <a href="services.html" class="btn btn-secondary" data-animation="fade-in-up">Back to Services <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </section>
+
+        <section class="tax-payment-form-section">
+            <div class="container">
+                <h3 class="section-title">Initiate Your Tax Payment</h3>
+                <p class="section-description">Please fill in the required details below to proceed with your tax payment.</p>
+
+                <div class="payment-card-container">
+                    <form id="taxPaymentForm" class="tax-form">
+                        <div class="form-group">
+                            <label for="taxId">Taxpayer Identification Number (TIN)</label>
+                            <input type="text" id="taxId" name="taxId" placeholder="e.g., 123456789ABC" required pattern="[0-9A-Za-z]+" title="Please enter a valid TIN (alphanumeric)">
+                            <div class="error-message" id="taxIdError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taxPeriod">Tax Period / Year</label>
+                            <input type="text" id="taxPeriod" name="taxPeriod" placeholder="e.g., 2024 (or Q1-2024)" required>
+                            <div class="error-message" id="taxPeriodError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taxAmount">Amount Due (XAF)</label>
+                            <input type="number" id="taxAmount" name="taxAmount" placeholder="e.g., 50000" min="1" step="any" required>
+                            <div class="error-message" id="taxAmountError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taxType">Type of Tax</label>
+                            <select id="taxType" name="taxType" required>
+                                <option value="">Select Tax Type</option>
+                                <option value="income">Income Tax</option>
+                                <option value="vat">Value Added Tax (VAT)</option>
+                                <option value="property">Property Tax</option>
+                                <option value="business">Business License Tax</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message" id="taxTypeError"></div>
+                        </div>
+
+                        <div class="form-group payment-method-group">
+                            <label>Select Payment Method</label>
+                            <div class="payment-options">
+                                <label class="radio-card">
+                                    <input type="radio" name="paymentMethod" value="mobileMoney" checked>
+                                    <div class="card-content">
+                                        <i class="fas fa-mobile-alt"></i> Mobile Money
+                                        <img src="https://via.placeholder.com/60x20/F9FF4B/1a4d35?text=MTN" alt="Mobile Money Logo" class="payment-logo">
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="paymentMethod" value="bankTransfer">
+                                    <div class="card-content">
+                                        <i class="fas fa-bank"></i> Bank Transfer
+                                        <img src="https://via.placeholder.com/60x20/F9FF4B/1a4d35?text=Bank" alt="Bank Logo" class="payment-logo">
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="paymentMethod" value="creditCard">
+                                    <div class="card-content">
+                                        <i class="fas fa-credit-card"></i> Credit/Debit Card
+                                        <img src="https://via.placeholder.com/60x20/F9FF4B/1a4d35?text=Visa" alt="Visa Logo" class="payment-logo">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="error-message" id="paymentMethodError"></div>
+                        </div>
+
+                        <div class="form-group terms-checkbox">
+                            <label>
+                                <input type="checkbox" id="agreeToTerms" required>
+                                I agree to the <a href="#">payment terms and conditions</a>.
+                            </label>
+                            <div class="error-message" id="termsError"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-payment-btn">Proceed to Payment <i class="fas fa-check-circle"></i></button>
+
+                        <div id="paymentStatus" class="payment-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 E-GovCameroon. All rights reserved. Made for the Republic of Cameroon.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/tax-payment.js"></script> <!-- Tax Payment-specific scripts -->
+</body>
+</html>
